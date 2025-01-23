@@ -1,0 +1,14 @@
+{
+  "name": "browsie-script",
+  "version": "1.0.0",
+  "description": "Scripting language oriented to database management.",
+  "main": "browsie-script.js",
+  "scripts": {
+    "build": "npx pegjs --format globals --export-var BrowsieScript --output browsie-script.js browsie-script.pegjs && node fix.js",
+    "export": "cp browsie-script.js docs/src/external/browsie-script.js",
+    "test": "npm run build && npx mocha --bail test.js && npm run export"
+  },
+  "keywords": [],
+  "author": "allnulled",
+  "license": "WTFPL"
+}

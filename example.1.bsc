@@ -1,0 +1,22 @@
+// Sintaxis para seleccionar:
+users?
+users?id is null
+users?id is not null
+users?name="admin"
+users?name="admin" & password="admin"
+users?name="admin" & {{ it.password === "admin" }}
+users?name="admin" | email="admin"
+users?(name="admin" | email="admin") & password = "admin"
+// Sintaxis para insertar:
+users+{"name":"admin","password":"admin"}
+users+[{"name":"1","password":"1"},{"name":"2","password":"2"},{"name":"3","password":"3"}]
+// Sintaxis para eliminar:
+users-1-2-3
+users-{{ it.id === 1}}
+users-id=1
+users-id=1-id=2-3
+// Sintaxis para actualizar:
+users:password is null={"password":"default"}
+users:1={"password":"default"}
+users:{{ it.password === "default" }}={"password":"default"}
+users:{{ it.password === "default" }} | {{ typeof it.password === "undefined" }} | {{ it.password === null }}={"password":"default"}
