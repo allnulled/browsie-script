@@ -61,6 +61,9 @@ describe("BrowsieScript Parser API Test", function () {
     `users:name="admin"&email="admin"?`,
     `users? > $.sort.by.props(_, "created_at", "name", "id")`,
     `users:(name="admin"|email="admin")&(id is not null)? > $.sort.by.props(_, "created_at", "name", "id")`,
+    `users? * console.log`,
+    `messages+{message:"Hello, world!"}`,
+    `messages:1? * console.log`,
   ].forEach((s, si) => {
     it("can parse a simple BrowsieScript string of test " + si, async function () {
       try {

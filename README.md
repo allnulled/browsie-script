@@ -103,9 +103,13 @@ We have 3 types of pipe:
  - **(Level 1) Modifying.** Symbol: `>`. Used to modify the value.
  - **(Level 2) Exporting.** Symbol: `>>`. Used to export the value to local, global or wherever variable.
  - **(Level 3) Returning.** Symbol: `>>>`. Used to return from the current function.
+ - **(Level 4) Returning.** Symbol: `*`. Used to multiply against functions.
 
 ```
 users? > $.sort.by.props(_, "created_at", "name", "id")
 users:(name="admin"|email="admin")&(id is not null)? > $.sort.by.props(_, "created_at", "name", "id")
+users? * console.log
+messages+{message:"Hello, world!"}
+messages:1? * console.log
 ```
 

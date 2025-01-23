@@ -19,7 +19,7 @@ Value_appended =
 
 Value_pure = Json_value
 
-Value_appendment = Subsentence_return / Subsentence_export / Subsentence_filter
+Value_appendment = Subsentence_return / Subsentence_export / Subsentence_filter / Subsentence_multiply
 
 Injected_parameter = "#" (Js_noun / Integer)? { return { $type: "injected parameter", value: text() } }
 
@@ -131,6 +131,11 @@ Subsentence_return =
   token1:(_ ">>>" _)
   name:Function_parameter
     { return { $type: "return appendment", name } }
+
+Subsentence_multiply =
+  token1:(_ "*" _)
+  name:Function_parameter
+    { return { $type: "multiply appendment", name } }
 
 Function_name = Js_path
 

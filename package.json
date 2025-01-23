@@ -1,5 +1,5 @@
 {
-  "name": "browsie-script",
+  "name": "@allnulled/browsie-script",
   "version": "1.0.0",
   "description": "Scripting language oriented to database management.",
   "main": "browsie-script.js",
